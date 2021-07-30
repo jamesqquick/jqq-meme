@@ -4,9 +4,9 @@
 	 viewBox="0 0 1440 932" style="enable-background:new 0 0 1440 932;" xml:space="preserve">
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFF300;}
-	.st2{fill-rule:evenodd;clip-rule:evenodd;}
-	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#ED1C24;}
+	.st1{fillRule:evenodd;clipRule:evenodd;fill:#FFF300;}
+	.st2{fillRule:evenodd;clipRule:evenodd;}
+	.st3{fillRule:evenodd;clipRule:evenodd;fill:#ED1C24;}
 </style>
 <path d="M434,295c0,0,42.5-49.3,112-55c147-12,200,146,200,146s105-47,140-38s133,28,133,28l-17,257l-302,83l-266,7V295z"/>
 <g>
