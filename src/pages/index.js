@@ -118,31 +118,31 @@ export default function Home() {
 
         <ul className="social">
           <li>
-            <a href="">
+            <a href="http://youtube.com/c/jamesqquick" target="_blank">
               <Icon name="youtube" />
               Subscribe on YouTube
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="http://twitter.com/jamesqquick" target="_blank">
               <Icon name="twitter" />
               Follow on Twitter
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="http://compressed.fm" target="_blank">
               <Icon name="listen" />
               Listen on Compressed.fm
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="http://selfteach.me" target="_blank">
               <Icon name="designed" />
               Designed by @SelfTeach.me
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="http://kwes.io" target="_blank">
               <Icon name="powered" />
               Powered by Kwes Forms
             </a>
