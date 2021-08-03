@@ -1,20 +1,18 @@
-import Link from "next/link";
-import Image from 'next/image'
-import styled from "styled-components";
+import Link from 'next/link';
+import Image from 'next/image';
+import styled from 'styled-components';
 
-import { Breakpoints } from "../styles/Breakpoints"
+import { Icon } from 'components/icon';
+import { Breakpoints } from '../styles/Breakpoints';
 
 // components
-import { BuildingOne } from "../components/buildings/buildingOne"
-import { BuildingTwo } from "../components/buildings/buildingTwo"
-import { BuildingThree } from "../components/buildings/buildingThree"
-import { BuildingFour } from "../components/buildings/buildingFour"
-import { BuildingFive } from "../components/buildings/buildingFive"
-import { BuildingSix } from "../components/buildings/buildingSix"
-import { BuildingSeven } from "../components/buildings/buildingSeven"
-
-import { UploadFile } from "components/uploadFile";
-import { Icon } from "components/icon";
+import { BuildingOne } from '../components/buildings/buildingOne';
+import { BuildingTwo } from '../components/buildings/buildingTwo';
+import { BuildingThree } from '../components/buildings/buildingThree';
+import { BuildingFour } from '../components/buildings/buildingFour';
+import { BuildingFive } from '../components/buildings/buildingFive';
+import { BuildingSix } from '../components/buildings/buildingSix';
+import { BuildingSeven } from '../components/buildings/buildingSeven';
 
 export default function Home() {
   return (
@@ -28,22 +26,43 @@ export default function Home() {
             </a>
             <div className="starburst">
               <div className="text">
-                Submit Your<br />
-                Funniest<br />
+                Submit Your
+                <br />
+                Funniest
+                <br />
                 James Meme by
                 <div className="month">August</div>
-                <div className="day">10<sup>th</sup></div>
+                <div className="day">
+                  10<sup>th</sup>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="caption-this">
           <div className="logo">
-            <Image src="/images/logo__jqq.svg" alt="James Q Quick" width={242} height={47} />
+            <Image
+              src="/images/logo__jqq.svg"
+              alt="James Q Quick"
+              width={242}
+              height={47}
+            />
           </div>
           <div className="caption-this__wrapper">
-            <div className="jqq-style"><Image src="/images/jqq-style.svg" alt="JQQ Style" width={327} height={425} /></div>
-            <Image src="/images/heading__caption-this.svg" alt="Caption This" width={606} height={277} />
+            <div className="jqq-style">
+              <Image
+                src="/images/jqq-style.svg"
+                alt="JQQ Style"
+                width={327}
+                height={425}
+              />
+            </div>
+            <Image
+              src="/images/heading__caption-this.svg"
+              alt="Caption This"
+              width={606}
+              height={277}
+            />
           </div>
           <div className="meme-maker">
             <strong>Are you a creative meme maker?</strong>
@@ -60,15 +79,22 @@ export default function Home() {
               <input type="email" name="email" />
             </div>
             <div className="field">
-              <div className="label" htmlFor="name">File Upload</div>
+              <div className="label" htmlFor="name">
+                File Upload
+              </div>
               <input type="file" name="file" />
             </div>
             <div className="field powered-and-submit">
               <div className="powered-by-kwes">
                 Powered by
-                <Image src="/images/logo__kwes-form@2x.png" alt="KWES Form" width={139} height={31} />
+                <Image
+                  src="/images/logo__kwes-form@2x.png"
+                  alt="KWES Form"
+                  width={139}
+                  height={31}
+                />
               </div>
-              <button>
+              <button type="submit">
                 <Image src="/images/btn__submit.svg" width={222} height={79} />
               </button>
             </div>
@@ -92,24 +118,32 @@ export default function Home() {
             <Image src="/images/first.svg" alt="1st" width={196} height={199} />
           </div>
           <div className="first-place__content">
-            Lifetime PRO account on {" "}
-            <a href="#">devdojo.com</a>
+            Lifetime PRO account on{' '}
+            <a href="http://devdojo.com" target="_blank" rel="noreferrer">
+              devdojo.com
+            </a>
           </div>
         </div>
         <div className="second-place">
           <div className="second-place__number">
-            <Image src="/images/second.svg" alt="2nd" width={212} height={151} />
+            <Image
+              src="/images/second.svg"
+              alt="2nd"
+              width={212}
+              height={151}
+            />
           </div>
           <div className="second-place__content">
             SOMETHING ELSE REALLY GREAT
           </div>
         </div>
         <div className="third-place">
-          <div className="third-place__number"><Image src="/images/third.svg" alt="2nd" width={211} height={179} /></div>
+          <div className="third-place__number">
+            <Image src="/images/third.svg" alt="2nd" width={211} height={179} />
+          </div>
           <div className="third-place__content">SOMETHING ELSE GREAT</div>
         </div>
       </StyledPrizes>
-
 
       <StyledClouds>
         <div className="barcode">
@@ -118,31 +152,39 @@ export default function Home() {
 
         <ul className="social">
           <li>
-            <a href="http://youtube.com/c/jamesqquick" target="_blank">
+            <a
+              href="http://youtube.com/c/jamesqquick"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Icon name="youtube" />
               Subscribe on YouTube
             </a>
           </li>
           <li>
-            <a href="http://twitter.com/jamesqquick" target="_blank">
+            <a
+              href="http://twitter.com/jamesqquick"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Icon name="twitter" />
               Follow on Twitter
             </a>
           </li>
           <li>
-            <a href="http://compressed.fm" target="_blank">
+            <a href="http://compressed.fm" target="_blank" rel="noreferrer">
               <Icon name="listen" />
               Listen on Compressed.fm
             </a>
           </li>
           <li>
-            <a href="http://selfteach.me" target="_blank">
+            <a href="http://selfteach.me" target="_blank" rel="noreferrer">
               <Icon name="designed" />
               Designed by @SelfTeach.me
             </a>
           </li>
           <li>
-            <a href="http://kwes.io" target="_blank">
+            <a href="http://kwes.io" target="_blank" rel="noreferrer">
               <Icon name="powered" />
               Powered by Kwes Forms
             </a>
@@ -150,21 +192,25 @@ export default function Home() {
         </ul>
 
         <footer>
-          COPYRIGHT ©2021 JAMES Q QUICK. ALL RIGHTS RESERVED {" • "}
-          <Link href="/disclaimers"><a>DISCLAIMERS</a></Link> {" • "}
-          <Link href="/terms-and-conditions"><a>TERMS AND CONDITIONS</a></Link>
+          COPYRIGHT ©2021 JAMES Q QUICK. ALL RIGHTS RESERVED {' • '}
+          <Link href="/disclaimers">
+            <a>DISCLAIMERS</a>
+          </Link>{' '}
+          {' • '}
+          <Link href="/terms-and-conditions">
+            <a>TERMS AND CONDITIONS</a>
+          </Link>
         </footer>
-
       </StyledClouds>
     </>
-  )
+  );
 }
 
 const StyledMain = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
-  max-width: ${props => props.theme.pageWidth};
+  max-width: ${(props) => props.theme.pageWidth};
   padding-top: 25px;
   width: 100%;
 
@@ -189,8 +235,8 @@ const StyledMain = styled.main`
   .starburst {
     background: url('/images/speech-bubble.svg') left top no-repeat;
     bottom: -210px;
-    color: ${props => props.theme.black};
-    font-family: ${props => props.theme.comic};
+    color: ${(props) => props.theme.black};
+    font-family: ${(props) => props.theme.comic};
     font-style: italic;
     height: 367px;
     left: -115px;
@@ -213,7 +259,7 @@ const StyledMain = styled.main`
 
     .month,
     .day {
-      font-family: ${props => props.theme.peachyKeen};
+      font-family: ${(props) => props.theme.peachyKeen};
       font-size: 4.4rem;
       line-height: 1;
       font-style: normal;
@@ -231,12 +277,12 @@ const StyledMain = styled.main`
   }
 
   .download-image {
-    background: ${props => props.theme.black};
-    color: ${props => props.theme.cadmiumYellow};
+    background: ${(props) => props.theme.black};
+    color: ${(props) => props.theme.cadmiumYellow};
     cursor: pointer;
     display: inline-block;
     text-transform: uppercase;
-    font-family: ${props => props.theme.badaboom};
+    font-family: ${(props) => props.theme.badaboom};
     text-decoration: none;
     font-size: 3rem;
     letter-spacing: 3px;
@@ -246,8 +292,8 @@ const StyledMain = styled.main`
     bottom: 3px;
 
     &:hover {
-      background: ${props => props.theme.cadmiumYellow};
-      color: ${props => props.theme.carmineRed};
+      background: ${(props) => props.theme.cadmiumYellow};
+      color: ${(props) => props.theme.carmineRed};
     }
   }
 
@@ -259,7 +305,7 @@ const StyledMain = styled.main`
 
   .caption-this {
     align-items: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
     position: relative;
 
@@ -280,10 +326,10 @@ const StyledMain = styled.main`
   }
 
   .meme-maker {
-    font-family: ${props => props.theme.comic};
+    font-family: ${(props) => props.theme.comic};
     text-transform: uppercase;
-    color: ${props => props.theme.black};
-    background: #ABDBD3;
+    color: ${(props) => props.theme.black};
+    background: #abdbd3;
     padding: 16px 52px;
     font-size: 2rem;
     line-height: 2.8rem;
@@ -303,32 +349,32 @@ const StyledMain = styled.main`
 
   .label,
   label {
-    font-family: ${props => props.theme.peachyKeen};
+    font-family: ${(props) => props.theme.peachyKeen};
     text-transform: uppercase;
-    color: ${props => props.theme.black};
+    color: ${(props) => props.theme.black};
     display: block;
     font-size: 2.2rem;
     line-height: 3.2rem;
   }
 
-  input[type="text"],
-    input[type="email"] {
+  input[type='text'],
+  input[type='email'] {
     background: url('/images/text-input.svg') left top no-repeat;
     background-size: 542px 77px;
     border: none;
     height: 77px;
     width: 502px;
-    font-family: ${props => props.theme.comic};
-    font-size: 2.0rem;
+    font-family: ${(props) => props.theme.comic};
+    font-size: 2rem;
     text-transform: uppercase;
     padding: 0 20px;
   }
 
-  input[type = file] {
+  input[type='file'] {
     height: 120px;
     margin-top: -35px;
     width: 100%;
-    font-family: ${props => props.theme.comic};
+    font-family: ${(props) => props.theme.comic};
     text-transform: uppercase;
     font-style: italic;
     color: black;
@@ -368,9 +414,9 @@ const StyledMain = styled.main`
   }
 
   .field > .powered-by-kwes {
-    font-family: ${props => props.theme.comic};
+    font-family: ${(props) => props.theme.comic};
     text-transform: uppercase;
-    color: ${props => props.theme.black};
+    color: ${(props) => props.theme.black};
     font-size: 1.8rem;
     display: flex;
     align-items: center;
@@ -401,14 +447,14 @@ const StyledBuildings = styled.section`
     position: absolute;
     right: 0;
     z-index: 1;
-}
+  }
 `;
 
 const StyledPrizes = styled.section`
-  background: ${props => props.theme.white};
-  border-top: 10px solid ${props => props.theme.black};
-  color: ${props => props.theme.black};
-  font-family: ${props => props.theme.peachyKeen};
+  background: ${(props) => props.theme.white};
+  border-top: 10px solid ${(props) => props.theme.black};
+  color: ${(props) => props.theme.black};
+  font-family: ${(props) => props.theme.peachyKeen};
   font-size: 3.2rem;
   line-height: 1;
   margin-top: -50px;
@@ -418,12 +464,12 @@ const StyledPrizes = styled.section`
   z-index: 5;
   padding: 0 25px 200px;
 
-  @media(${Breakpoints.medium}) {
+  @media (${Breakpoints.medium}) {
     font-size: 4rem;
     padding: 0 100px 200px;
   }
 
-  @media(${Breakpoints.regular}) {
+  @media (${Breakpoints.regular}) {
     background: url('/images/three-frames.svg') center top no-repeat;
     background-size: 100% auto;
     border-top: none;
@@ -435,7 +481,7 @@ const StyledPrizes = styled.section`
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.carmineRed};
+    color: ${(props) => props.theme.carmineRed};
   }
 
   .first-place {
@@ -458,12 +504,11 @@ const StyledPrizes = styled.section`
   .second-place {
     position: relative;
 
-    @media(${Breakpoints.regular}) {
+    @media (${Breakpoints.regular}) {
       left: -40px;
     }
 
     &__number {
-
     }
 
     &__content {
@@ -477,12 +522,11 @@ const StyledPrizes = styled.section`
     position: relative;
     margin-top: 50px;
 
-    @media(${Breakpoints.regular}) {
+    @media (${Breakpoints.regular}) {
       margin-top: 90px;
     }
 
     &__number {
-
     }
 
     &__content {
@@ -503,11 +547,11 @@ const StyledClouds = styled.section`
   margin-top: -250px;
   z-index: 20;
 
-  @media(${Breakpoints.medium}) {
+  @media (${Breakpoints.medium}) {
     min-height: 1105px;
   }
 
-  @media(${Breakpoints.regular}) {
+  @media (${Breakpoints.regular}) {
     margin-top: -430px;
   }
 
@@ -517,16 +561,16 @@ const StyledClouds = styled.section`
     left: 0;
     top: 200px;
 
-    @media(${Breakpoints.medium}) {
+    @media (${Breakpoints.medium}) {
       display: block;
     }
   }
 
   .social {
     list-style: none;
-    font-family: ${props => props.theme.comic};
+    font-family: ${(props) => props.theme.comic};
     text-transform: uppercase;
-    color: ${props => props.theme.white};
+    color: ${(props) => props.theme.white};
     font-size: 1.6rem;
     line-height: 1;
     position: absolute;
@@ -536,46 +580,46 @@ const StyledClouds = styled.section`
     padding: 0;
     font-weight: bold;
 
-  li {
-    margin-bottom: 25px;
-  }
-
-  a {
-    color: ${props => props.theme.white};
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-
-    &:hover {
-      color: ${props => props.theme.cadmiumYellow};
-      text-decoration: underline;
+    li {
+      margin-bottom: 25px;
     }
 
-    svg {
-      margin-right: 10px;
+    a {
+      color: ${(props) => props.theme.white};
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      &:hover {
+        color: ${(props) => props.theme.cadmiumYellow};
+        text-decoration: underline;
+      }
+
+      svg {
+        margin-right: 10px;
+      }
     }
   }
-}
 
-footer {
-  font-family: ${props => props.theme.comic};
-  font-weight: bold;
-  text-transform: uppercase;
-  color: ${props => props.theme.white};
-  font-size: 1.6rem;
-  line-height: 1;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
+  footer {
+    font-family: ${(props) => props.theme.comic};
+    font-weight: bold;
+    text-transform: uppercase;
+    color: ${(props) => props.theme.white};
+    font-size: 1.6rem;
+    line-height: 1;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
 
-  a {
-    color: ${props => props.theme.white};
-    text-decoration: none;
+    a {
+      color: ${(props) => props.theme.white};
+      text-decoration: none;
 
-    &:hover {
-      color: ${props => props.theme.cadmiumYellow};
-      text-decoration: underline;
+      &:hover {
+        color: ${(props) => props.theme.cadmiumYellow};
+        text-decoration: underline;
+      }
     }
   }
-}
 `;
