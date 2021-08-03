@@ -151,8 +151,8 @@ export default function Home() {
 
         <footer>
           COPYRIGHT ©2021 JAMES Q QUICK. ALL RIGHTS RESERVED {" • "}
-          <Link href=""><a>DISCLAIMERS</a></Link> {" • "}
-          <Link href="#"><a>TERMS AND CONDITIONS</a></Link>
+          <Link href="/disclaimers"><a>DISCLAIMERS</a></Link> {" • "}
+          <Link href="/terms-and-conditions"><a>TERMS AND CONDITIONS</a></Link>
         </footer>
 
       </StyledClouds>
@@ -405,18 +405,33 @@ const StyledBuildings = styled.section`
 `;
 
 const StyledPrizes = styled.section`
-  background: url('/images/three-frames.svg') center top no-repeat;
-  background-size: 100% auto;
+  background: ${props => props.theme.white};
+  border-top: 10px solid ${props => props.theme.black};
+  color: ${props => props.theme.black};
+  font-family: ${props => props.theme.peachyKeen};
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-top: -50px;
   min-height: 550px;
   position: relative;
-  margin-top: -85px;
-  font-family: ${props => props.theme.peachyKeen};
   text-transform: uppercase;
-  display: grid;
-  grid-template-columns: 33% 28% 35%;
-  font-size: 4rem;
-  line-height: 1;
-  color: ${props => props.theme.black};
+  z-index: 5;
+  padding: 0 25px 200px;
+
+  @media(${Breakpoints.medium}) {
+    font-size: 4rem;
+    padding: 0 100px 200px;
+  }
+
+  @media(${Breakpoints.regular}) {
+    background: url('/images/three-frames.svg') center top no-repeat;
+    background-size: 100% auto;
+    border-top: none;
+    display: grid;
+    grid-template-columns: 33% 28% 35%;
+    margin-top: -85px;
+    padding: 0 100px;
+  }
 
   a {
     text-decoration: none;
@@ -442,7 +457,10 @@ const StyledPrizes = styled.section`
 
   .second-place {
     position: relative;
-    left: -40px;
+
+    @media(${Breakpoints.regular}) {
+      left: -40px;
+    }
 
     &__number {
 
@@ -457,7 +475,11 @@ const StyledPrizes = styled.section`
 
   .third-place {
     position: relative;
-    margin-top: 90px;
+    margin-top: 50px;
+
+    @media(${Breakpoints.regular}) {
+      margin-top: 90px;
+    }
 
     &__number {
 
@@ -476,14 +498,28 @@ const StyledClouds = styled.section`
   background: url('/images/clouds.svg') center top no-repeat,
     linear-gradient(transparent 0px, transparent 600px, black 600px, black 100%);
   background-size: 100% auto;
-  min-height: 1105px;
+  min-height: 740px;
   position: relative;
-  margin-top: -430px;
+  margin-top: -250px;
+  z-index: 20;
+
+  @media(${Breakpoints.medium}) {
+    min-height: 1105px;
+  }
+
+  @media(${Breakpoints.regular}) {
+    margin-top: -430px;
+  }
 
   .barcode {
+    display: none;
     position: absolute;
     left: 0;
     top: 200px;
+
+    @media(${Breakpoints.medium}) {
+      display: block;
+    }
   }
 
   .social {
