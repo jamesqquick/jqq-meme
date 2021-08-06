@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
+import { Breakpoints } from 'styles/Breakpoints';
+
 export default function Prizes() {
     return (
         <StyledPrizes>
@@ -44,35 +46,43 @@ export default function Prizes() {
         </StyledPrizes>
     );
 }
-
 const StyledPrizes = styled.section`
-    background: url('/images/three-frames.svg') center top no-repeat;
-    background-size: 100% auto;
+    background: ${(props) => props.theme.white};
+    border-top: 10px solid ${(props) => props.theme.black};
+    color: ${(props) => props.theme.black};
+    font-family: ${(props) => props.theme.peachyKeen};
+    font-size: 3.2rem;
+    line-height: 1;
+    margin-top: -50px;
     min-height: 550px;
     position: relative;
-    margin-top: -85px;
-    font-family: ${(props) => props.theme.peachyKeen};
     text-transform: uppercase;
-    display: grid;
-    grid-template-columns: 33% 28% 35%;
-    font-size: 4rem;
-    line-height: 1;
-    color: ${(props) => props.theme.black};
-
+    z-index: 5;
+    padding: 0 25px 200px;
+    @media (${Breakpoints.medium}) {
+        font-size: 4rem;
+        padding: 0 100px 200px;
+    }
+    @media (${Breakpoints.regular}) {
+        background: url('/images/three-frames.svg') center top no-repeat;
+        background-size: 100% auto;
+        border-top: none;
+        display: grid;
+        grid-template-columns: 33% 28% 35%;
+        margin-top: -85px;
+        padding: 0 100px;
+    }
     a {
         text-decoration: none;
         color: ${(props) => props.theme.carmineRed};
     }
-
     .first-place {
         position: relative;
         top: -50px;
         display: flex;
-
         &__number {
             flex-basis: 196px;
         }
-
         &__content {
             flex: 1;
             padding-top: 100px;
@@ -80,28 +90,27 @@ const StyledPrizes = styled.section`
             left: -25px;
         }
     }
-
     .second-place {
         position: relative;
-        left: -40px;
-
+        @media (${Breakpoints.regular}) {
+            left: -40px;
+        }
         &__number {
         }
-
         &__content {
             position: relative;
             padding-left: 140px;
             top: -25px;
         }
     }
-
     .third-place {
         position: relative;
-        margin-top: 90px;
-
+        margin-top: 50px;
+        @media (${Breakpoints.regular}) {
+            margin-top: 90px;
+        }
         &__number {
         }
-
         &__content {
             width: 75%;
             position: relative;

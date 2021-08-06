@@ -3,15 +3,15 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Theme from '../styles/Theme';
 
 function MyApp({ Component, pageProps }) {
-    return (
-        <ThemeProvider theme={Theme}>
-            <Head>
-                <title>JQQ Meme Competition</title>
-            </Head>
-            <GlobalStyle />
-            <Component {...pageProps} />
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={Theme}>
+      <Head>
+        <title>JQQ Meme Competition</title>
+      </Head>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${(props) =>
-        props.theme.black} url('/images/bg.jpg') center top no-repeat;
+      props.theme.black} url('/images/bg.jpg') center top no-repeat;
     background-size: 100% auto;
     min-height: 100vh;
     width: 100%;

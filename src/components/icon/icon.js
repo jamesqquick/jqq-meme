@@ -1,8 +1,8 @@
-import { Designed } from "./designed";
-import { Listen } from "./listen";
-import { Powered } from "./powered";
-import { Twitter } from "./twitter";
-import { Youtube } from "./youtube";
+import { Designed } from './designed';
+import { Listen } from './listen';
+import { Powered } from './powered';
+import { Twitter } from './twitter';
+import { Youtube } from './youtube';
 
 const Icon = (props) => {
   const { name } = props;
@@ -18,8 +18,8 @@ const Icon = (props) => {
     case 'youtube':
       return <Youtube {...props} />;
     default:
-      return <div />
+      return <div />;
   }
-}
+};
 
-export { Icon }
+export { Icon };
