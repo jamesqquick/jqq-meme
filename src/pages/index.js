@@ -1,18 +1,15 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import kwesforms from 'kwesforms';
-
 // components
 
 import { useEffect } from 'react';
-import StyledForm, { DownloadButton } from 'styles/StyledForm';
-import { StrongLink, StyledContainer } from 'styles/GlobalUtils';
+import StyledForm, { StyledField, StyledLabel } from 'styles/Forms';
+import { StrongLink } from 'styles/GlobalUtils';
 import Clouds from 'components/clouds';
 import Prizes from 'components/prizes';
 import Buildings from 'components/buildings/buildings';
 import Link from 'next/link';
-import { Breakpoints } from '../styles/Breakpoints';
 
 export default function Home() {
   useEffect(() => {
@@ -78,34 +75,37 @@ export default function Home() {
             action="https://kwes.io/api/foreign/forms/wmocA1KiTbmqhemuXfny"
             no-error-message="true"
           >
-            <div className="field">
-              <label htmlFor="name">Name</label>
-              <input type="text" name="fullName" rules="required|max:255" />
-            </div>
-            <div className="field">
-              <label htmlFor="email">Email Address</label>
-              <input type="text" name="email" rules="email" />
-            </div>
-            <div className="field">
-              <div className="label" htmlFor="meme">
-                File Upload
-              </div>
+            <StyledField>
+              <StyledLabel htmlFor="fullName">Name</StyledLabel>
+              <input
+                type="text"
+                name="fullName"
+                id="fulLName"
+                rules="required|max:255"
+              />
+            </StyledField>
+            <StyledField>
+              <StyledLabel htmlFor="email">Email Address</StyledLabel>
+              <input type="text" name="email" id="email" rules="email" />
+            </StyledField>
+            <StyledField>
+              <StyledLabel htmlFor="meme">File Upload</StyledLabel>
               <input type="file" name="meme" rules="image|required" />
-            </div>
-            <div className="field powered-and-submit">
+            </StyledField>
+            <StyledField className="powered-and-submit">
               <div className="powered-by-kwes">
                 Powered by
                 <Image
                   src="/images/logo__kwes-form@2x.png"
-                  alt="KWES Form"
+                  alt="Kwes Form"
                   width={139}
                   height={31}
                 />
               </div>
-              <button>
+              <button type="submit">
                 <Image src="/images/btn__submit.svg" width={222} height={79} />
               </button>
-            </div>
+            </StyledField>
           </StyledForm>
         </div>
       </StyledMain>

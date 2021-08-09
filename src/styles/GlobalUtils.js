@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
@@ -9,12 +8,12 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  box-shadow: -3px 3px black;
+  box-shadow: -6px 6px black;
   border: 2px solid black;
   font-family: ${(props) => props.theme.comic};
   font-size: 3rem;
   text-transform: uppercase;
-  padding: 0 20px;
+  padding: 20px;
   cursor: pointer;
   transition: box-shadow 100ms;
 

@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
+export const StyledField = styled.div`
+  margin-bottom: 24px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  z-index: 5;
+`;
+
+export const StyledLabel = styled.label`
+  font-family: ${(props) => props.theme.peachyKeen};
+  text-transform: uppercase;
+  color: ${(props) => props.theme.black};
+  display: block;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+`;
 export default styled.form`
-  .field {
-    margin-bottom: 24px;
-    width: 100%;
-    text-align: left;
-    position: relative;
-    z-index: 5;
-  }
-
-  .label,
-  label {
-    font-family: ${(props) => props.theme.peachyKeen};
-    text-transform: uppercase;
-    color: ${(props) => props.theme.black};
-    display: block;
-    font-size: 2.2rem;
-    line-height: 3.2rem;
-  }
-
   input[type='text'],
   input[type='email'] {
     background: url('/images/text-input.svg') left top no-repeat;
@@ -61,23 +59,5 @@ export default styled.form`
       position: relative;
       top: 40px;
     }
-  }
-`;
-
-export const DownloadButton = styled.a`
-  background: ${(props) => props.theme.black};
-  color: ${(props) => props.theme.cadmiumYellow};
-  cursor: pointer;
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: ${(props) => props.theme.badaboom};
-  text-decoration: none;
-  font-size: 3rem;
-  letter-spacing: 3px;
-  padding: 20px 25px;
-
-  &:hover {
-    background: ${(props) => props.theme.cadmiumYellow};
-    color: ${(props) => props.theme.carmineRed};
   }
 `;

@@ -5,7 +5,7 @@ import {
   StyledButton,
   StyledContainer,
 } from 'styles/GlobalUtils';
-import StyledForm from 'styles/StyledForm';
+import StyledForm, { StyledField, StyledLabel } from 'styles/Forms';
 
 export default function MemeGenerator() {
   const [memeText, setMemeText] = useState('');
@@ -13,8 +13,7 @@ export default function MemeGenerator() {
     top: 100,
     left: 40,
   });
-  const [fontSize, setFontSize] = useState(30);
-
+  const [fontSize, setFontSize] = useState(42);
   const [imageURL, setImageURL] = useState('/images/meme1.jpg');
 
   const canvasRef = useRef(null);
@@ -48,7 +47,7 @@ export default function MemeGenerator() {
       const MAX_CHARACTERS_PER_LINE = 16;
       let longestLine = 0;
       let longestLineCount = 0;
-      for (let i = 0; i < allWords.length; i++) {
+      for (let i = 0; i < allWords.length; i += 1) {
         const word = allWords[i];
 
         if (characterCount + word.length > MAX_CHARACTERS_PER_LINE) {
@@ -56,7 +55,7 @@ export default function MemeGenerator() {
             longestLineCount = characterCount;
             longestLine = currentLine;
           }
-          currentLine++;
+          currentLine += 1;
           characterCount = word.length;
         } else {
           characterCount += word.length;
@@ -66,8 +65,6 @@ export default function MemeGenerator() {
         }
         wordsByLine[currentLine].push(word);
       }
-      console.log(longestLine);
-      console.log(wordsByLine[longestLine]);
 
       const textWidth = context.measureText(
         wordsByLine[longestLine].join(' ')
@@ -99,10 +96,9 @@ export default function MemeGenerator() {
         );
       });
     };
-  }, [canvasRef, imageURL, memeText, directions]);
+  }, [canvasRef, imageURL, memeText, directions, fontSize]);
 
   const updateDirections = (direction, increment) => {
-    console.log(direction, increment);
     if (direction === 'top' && directions[direction] + increment < 100) return;
     if (direction === 'left' && directions[direction] + increment < 40) return;
 
@@ -110,60 +106,71 @@ export default function MemeGenerator() {
       ...directions,
       [direction]: directions[direction] + increment,
     };
-    console.log(updated);
     setDirections(updated);
+  };
+
+  const shuffleImage = () => {
+    const randomImageIndex = Math.floor(Math.random() * 50);
+    setImageURL(`/images/me/${randomImageIndex}.png`);
   };
 
   return (
     <StyledContainer>
-      <h1>Generate Me a Meme!</h1>
-
-      <StyledCanvas ref={canvasRef} width="1280" height="720" />
+      <h1>Meme Me!</h1>
+      <StyledMeme>
+        <StyledButton id="shuffleBtn" onClick={shuffleImage} type="button">
+          Shuffle
+        </StyledButton>
+        <StyledCanvas ref={canvasRef} width="1280" height="720" />
+      </StyledMeme>
       <StyledForm>
-        <div className="field">
-          <label htmlFor="memeText">Text Position</label>
-          <StyledButtonControls>
-            <StyledButton
-              onClick={() => {
-                updateDirections('top', -10);
-              }}
-            >
-              Up
-            </StyledButton>
-            <StyledButton
-              onClick={() => {
-                updateDirections('top', 10);
-              }}
-            >
-              Down
-            </StyledButton>
-            <StyledButton
-              onClick={() => {
-                updateDirections('left', -10);
-              }}
-            >
-              Left
-            </StyledButton>
-            <StyledButton
-              onClick={() => {
-                updateDirections('left', 10);
-              }}
-            >
-              Right
-            </StyledButton>
-          </StyledButtonControls>
-        </div>
-        <div className="field">
-          <label htmlFor="memeText">Funny text</label>
+        <StyledField>
+          <StyledLabel htmlFor="memeText">Funny text</StyledLabel>
           <input
             type="text"
             name="memeText"
             value={memeText}
             onChange={(e) => setMemeText(e.target.value)}
           />
-        </div>
-
-        <StrongButton onClick={downloadMeme}>Download Image</StrongButton>
+        </StyledField>
+        <StyledField>
+          <StyledLabel>Text Position</StyledLabel>
+          <StyledButtonControls>
+            <StyledButton
+              onClick={() => {
+                updateDirections('top', -20);
+              }}
+              type="button"
+            >
+              Up
+            </StyledButton>
+            <StyledButton
+              onClick={() => {
+                updateDirections('top', 20);
+              }}
+              type="button"
+            >
+              Down
+            </StyledButton>
+            <StyledButton
+              onClick={() => {
+                updateDirections('left', -20);
+              }}
+              type="button"
+            >
+              Left
+            </StyledButton>
+            <StyledButton
+              onClick={() => {
+                updateDirections('left', 20);
+              }}
+              type="button"
+            >
+              Right
+            </StyledButton>
+          </StyledButtonControls>
+        </StyledField>
+        <StrongButton onClick={downloadMeme}>Download Meme</StrongButton>
       </StyledForm>
     </StyledContainer>
   );
@@ -173,10 +180,21 @@ const StyledButtonControls = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-auto-flow: column;
-  margin: 20px 0;
+`;
+
+const StyledMeme = styled.div`
+  position: relative;
+  max-width: 100%;
+
+  #shuffleBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 5;
+  }
 `;
 const StyledCanvas = styled.canvas`
-  width: 1280px;
-  aspect-ratio: 16 / 9;
-  max-width: 100%;
+  width: 100%;
+  border: 10px solid black;
+  margin-bottom: 2rem;
 `;
