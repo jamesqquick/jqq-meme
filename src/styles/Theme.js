@@ -12,6 +12,6 @@ const Theme = {
 
   // width, padding, and spacing
   pageWidth: '1300px',
-}
+};
 
 export default Theme;

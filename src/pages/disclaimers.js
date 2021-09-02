@@ -1,7 +1,3 @@
 export default function disclaimers() {
-  return (
-    <div>
-      Disclaimers
-    </div>
-  )
+  return <div>Disclaimers</div>;
 }
