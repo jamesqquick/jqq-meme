@@ -16,12 +16,12 @@ export const getUser = async (userId) =>
     },
   });
 
-export const createUser = async ({ id, stripeId }) =>
+export const createUser = async ({ id, stripeId, twitterHandle }) =>
   prisma.user.create({
     data: {
       id,
       stripeId,
-      twitterHandle: 'something',
+      twitterHandle,
     },
   });
 
