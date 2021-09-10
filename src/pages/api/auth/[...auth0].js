@@ -7,7 +7,7 @@ const CLAIM_PREFIX = 'http://jqqmemes.com';
 
 const afterCallback = async (req, res, session) => {
   const {
-    user: { sub, email },
+    user: { sub, email, name },
   } = session;
   console.log(session.user);
   // TODO: create callback API methods to handle stuff from stripe
@@ -16,6 +16,8 @@ const afterCallback = async (req, res, session) => {
   if (!existingUser) {
     // TODO: create stripe user record
     const customerData = {
+      name,
+      description: name,
       metadata: {
         sub,
       },
