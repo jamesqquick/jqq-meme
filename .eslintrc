@@ -13,7 +13,9 @@
           ]
         }
       }
+
     ],
+    "react/jsx-props-no-spreading": false
   } ,
   "settings": {
     "import/resolver": {
