@@ -28,7 +28,7 @@ const handler = async (req, res) => {
 
   switch (event.type) {
     case 'charge.succeeded':
-      console.log('charge succeeded');
+      console.log('charge succeeded!');
       try {
         const updatedUser = await updateUserToPremium({ id: userId });
         console.log(updatedUser);
