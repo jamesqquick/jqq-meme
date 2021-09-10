@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BuildingFour = ({ className }) => (
   <svg
@@ -18,4 +19,7 @@ const BuildingFour = ({ className }) => (
   </svg>
 );
 
+BuildingFour.propTypes = {
+  className: PropTypes.string,
+};
 export { BuildingFour };

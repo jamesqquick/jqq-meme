@@ -1,29 +1,21 @@
 {
-  "extends": [
-    "wesbos"
-  ],
-  "rules":{
-    "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+    "extends": ["wesbos"],
+    "rules": {
+        "jsx-a11y/label-has-associated-control": [
+            "error",
+            {
+                "required": {
+                    "some": ["nesting", "id"]
+                }
+            }
+        ],
+        "react/jsx-props-no-spreading": 0
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
         }
-      }
-
-    ],
-    "react/jsx-props-no-spreading": false
-  } ,
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": [
-          "src"
-        ]
-      }
     }
-  }
 }

@@ -3,24 +3,30 @@ import Clouds from 'components/clouds';
 import Nav from 'components/nav/nav';
 import Head from 'next/head';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import PropTypes from 'prop-types';
 import Theme from '../styles/Theme';
 
 function MyApp({ Component, pageProps }) {
-    return (
-        <ThemeProvider theme={Theme}>
-            <Head>
-                <title>JQQ Meme Competition</title>
-            </Head>
-            <GlobalStyle />
-            <UserProvider>
-                <Nav />
+  return (
+    <ThemeProvider theme={Theme}>
+      <Head>
+        <title>JQQ Meme Competition</title>
+      </Head>
+      <GlobalStyle />
+      <UserProvider>
+        <Nav />
 
-                <Component {...pageProps} />
-                <Clouds />
-            </UserProvider>
-        </ThemeProvider>
-    );
+        <Component {...pageProps} />
+        <Clouds />
+      </UserProvider>
+    </ThemeProvider>
+  );
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.any,
+  pageProps: PropTypes.any,
+};
 
 export default MyApp;
 
@@ -46,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${(props) =>
-        props.theme.black} url('/images/bg.jpg') center top no-repeat;
+      props.theme.black} url('/images/bg.jpg') center top no-repeat;
     background-size: 100% auto;
     min-height: 100vh;
     width: 100%;

@@ -10,9 +10,9 @@ export default function Prizes() {
         <div className="first-place__number">
           <Image src="/images/first.svg" alt="1st" width={196} height={199} />
         </div>
-        <div className="first-place__content">
+        {/* <div className="first-place__content">
           Lifetime PRO account on <a href="#">devdojo.com</a>
-        </div>
+        </div> */}
       </div>
       <div className="second-place">
         <div className="second-place__number">

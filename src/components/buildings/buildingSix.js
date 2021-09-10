@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const BuildingSix = ({ className }) => (
   <svg
     width="95"
@@ -16,4 +18,7 @@ const BuildingSix = ({ className }) => (
   </svg>
 );
 
+BuildingSix.propTypes = {
+  className: PropTypes.string,
+};
 export { BuildingSix };

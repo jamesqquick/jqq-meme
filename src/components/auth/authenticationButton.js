@@ -4,12 +4,12 @@ import LoginButton from './loginButton';
 import LogoutButton from './logoutButton';
 
 export default function AuthenticationButton() {
-    const { user, isLoading } = useUser();
+  const { user, isLoading } = useUser();
 
-    return (
-        <>
-            {!user && !isLoading && <LoginButton />}
-            {user && !isLoading && <LogoutButton />}
-        </>
-    );
+  return (
+    <>
+      {!user && !isLoading && <LoginButton />}
+      {user && !isLoading && <LogoutButton />}
+    </>
+  );
 }

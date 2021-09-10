@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Designed } from './designed';
 import { Listen } from './listen';
 import { Powered } from './powered';
@@ -20,6 +21,10 @@ const Icon = (props) => {
     default:
       return <div />;
   }
+};
+
+Icon.propTypes = {
+  name: PropTypes.string,
 };
 
 export { Icon };
