@@ -21,7 +21,7 @@ export default function MemeGenerator() {
   });
   const [fontSize] = useState(42);
   const [imageURL, setImageURL] = useState('');
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
 
   const isPremium = user && user.isPremium;
   const availableImages = isPremium ? 5 : 50;
@@ -161,20 +161,17 @@ export default function MemeGenerator() {
           {user && !isPremium && (
             <StyledField>
               <StyledLabel>
-                Upgrade for $1 to download the meme and get access to premium
+                Upgrade for $1 to support James and get access to premium
                 controls!
               </StyledLabel>
               <StrongButton type="button" onClick={upgradeToPremium}>
-                Create Better Memes
+                Create Better Memes!
               </StrongButton>
             </StyledField>
           )}
-          {!user && !isPremium && (
+          {!user && !isLoading && (
             <StyledField>
-              <StyledLabel>
-                Login and Upgrade for $1 to download the meme and get access to
-                premium controls!
-              </StyledLabel>
+              <StyledLabel>Login to download your meme!</StyledLabel>
               <LoginButton />
             </StyledField>
           )}

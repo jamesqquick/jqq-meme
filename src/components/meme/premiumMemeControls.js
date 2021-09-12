@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StyledField, StyledLabel } from 'styles/Forms';
-import { StrongButton, StyledButton } from 'styles/GlobalUtils';
+import { StyledButton } from 'styles/GlobalUtils';
 import PropTypes from 'prop-types';
 
-export default function PremiumMemeControls({
-  downloadMeme,
-  updateDirections,
-}) {
+export default function PremiumMemeControls({ updateDirections }) {
   return (
     <>
       <StyledField>
@@ -47,13 +44,11 @@ export default function PremiumMemeControls({
           </StyledButton>
         </StyledButtonControls>
       </StyledField>
-      <StrongButton onClick={downloadMeme}>Download Meme</StrongButton>
     </>
   );
 }
 
 PremiumMemeControls.propTypes = {
-  downloadMeme: PropTypes.func,
   updateDirections: PropTypes.func,
 };
 
