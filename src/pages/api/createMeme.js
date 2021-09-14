@@ -28,7 +28,7 @@ handler.post(async (req, res) => {
     const fileName = `${uid(16)}.${fileExtension}`;
     const { data: uploadedImage, error } = await supabase.storage
       .from('memes')
-      .upload(`public/${fileName}`, savedFileStream, {
+      .upload(`${fileName}`, savedFileStream, {
         cacheControl: '3600',
         upsert: true,
         contentType,

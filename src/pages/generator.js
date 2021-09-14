@@ -32,7 +32,7 @@ export default function MemeGenerator() {
     const canvas = canvasRef.current;
     const canvasDataURL = canvas.toDataURL('image/jpeg');
     const link = document.createElement('a');
-    link.download = 'jqq-meme.png';
+    link.download = 'jqq-meme.jpg';
     link.href = canvasDataURL;
     link.click();
   };
@@ -153,11 +153,13 @@ export default function MemeGenerator() {
             />
           </StyledField>
           {isPremium && (
-            <PremiumMemeControls
-              downloadMeme={downloadMeme}
-              updateDirections={updateDirections}
-            />
+            <PremiumMemeControls updateDirections={updateDirections} />
           )}
+          {user && (
+            <StrongButton onClick={downloadMeme}>Download Meme</StrongButton>
+          )}
+          <br />
+          <br />
           {user && !isPremium && (
             <StyledField>
               <StyledLabel>
@@ -169,6 +171,7 @@ export default function MemeGenerator() {
               </StrongButton>
             </StyledField>
           )}
+
           {!user && !isLoading && (
             <StyledField>
               <StyledLabel>Login to download your meme!</StyledLabel>
