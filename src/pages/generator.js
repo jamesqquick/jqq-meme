@@ -153,11 +153,13 @@ export default function MemeGenerator() {
             />
           </StyledField>
           {isPremium && (
-            <PremiumMemeControls
-              downloadMeme={downloadMeme}
-              updateDirections={updateDirections}
-            />
+            <PremiumMemeControls updateDirections={updateDirections} />
           )}
+          {user && (
+            <StrongButton onClick={downloadMeme}>Download Meme</StrongButton>
+          )}
+          <br />
+          <br />
           {user && !isPremium && (
             <StyledField>
               <StyledLabel>

@@ -1,4 +1,6 @@
 import { handleAuth, handleCallback } from '@auth0/nextjs-auth0';
+import jwt from 'jsonwebtoken';
+import { createSupabaseToken } from 'utils/auth';
 import { createUser, getUser } from '../../../utils/db';
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
@@ -14,8 +16,7 @@ const afterCallback = async (req, res, session) => {
   const twitterHandle = session.user[`${CLAIM_PREFIX}/handle`];
   const existingUser = await getUser(sub);
   if (!existingUser) {
-    // TODO: create stripe user record
-    const customerData = {
+    const stripeCustomerData = {
       name,
       description: name,
       metadata: {
@@ -23,8 +24,8 @@ const afterCallback = async (req, res, session) => {
       },
     };
     // TODO: what if any of this fails?
-    if (email) customerData.email = email;
-    const newCustomer = await stripe.customers.create(customerData);
+    if (email) stripeCustomerData.email = email;
+    const newCustomer = await stripe.customers.create(stripeCustomerData);
     console.log(newCustomer);
     await createUser({ id: sub, stripeId: newCustomer.id, twitterHandle });
     session.user.isPremium = false;
@@ -33,6 +34,9 @@ const afterCallback = async (req, res, session) => {
     session.user.isPremium = existingUser.isPremium;
     session.user.stripeId = existingUser.stripeId;
   }
+
+  const supabaseToken = createSupabaseToken(sub);
+  session.user.supabaseToken = supabaseToken;
   return session;
 };
 
