@@ -2,7 +2,12 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const getMemes = async () => prisma.meme.findMany();
+export const getMemes = async () =>
+  prisma.meme.findMany({
+    where: {
+      approved: true,
+    },
+  });
 
 export const createMeme = async (data) =>
   prisma.meme.create({
