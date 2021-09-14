@@ -10,8 +10,6 @@ const afterCallback = async (req, res, session) => {
   const {
     user: { sub, email, name },
   } = session;
-  console.log(session.user);
-  // TODO: create callback API methods to handle stuff from stripe
   const twitterHandle = session.user[`${CLAIM_PREFIX}/handle`];
   const existingUser = await getUser(sub);
   if (!existingUser) {
@@ -25,7 +23,7 @@ const afterCallback = async (req, res, session) => {
     // TODO: what if any of this fails?
     if (email) stripeCustomerData.email = email;
     const newCustomer = await stripe.customers.create(stripeCustomerData);
-    console.log(newCustomer);
+    console.log('New Stripe customer created', newCustomer);
     await createUser({ id: sub, stripeId: newCustomer.id, twitterHandle });
     session.user.isPremium = false;
     session.user.stripeId = newCustomer.id;

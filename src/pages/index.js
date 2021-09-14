@@ -16,7 +16,6 @@ import LoginButton from 'components/auth/loginButton';
 
 export default function Home() {
   const { user, isLoading } = useUser();
-  console.log(user);
   return (
     <>
       <StyledMain>

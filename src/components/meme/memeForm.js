@@ -45,7 +45,6 @@ export default function MemeForm() {
       // TODO: how to wipe out selected file
       setTitle('');
       setFile(null);
-      console.log(response);
     } catch (err) {
       console.error(err);
     }
