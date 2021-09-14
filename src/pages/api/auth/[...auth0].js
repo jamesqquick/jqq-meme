@@ -1,5 +1,4 @@
 import { handleAuth, handleCallback } from '@auth0/nextjs-auth0';
-import jwt from 'jsonwebtoken';
 import { createSupabaseToken } from 'utils/auth';
 import { createUser, getUser } from '../../../utils/db';
 

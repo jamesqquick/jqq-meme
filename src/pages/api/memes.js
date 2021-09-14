@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     case 'GET':
       return getMemesHandler(req, res);
     case 'POST':
-      return await createMemeHandler(req, res);
+      return createMemeHandler(req, res);
     default:
       console.log("We don't recognize that request...");
   }
