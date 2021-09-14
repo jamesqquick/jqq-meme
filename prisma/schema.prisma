@@ -27,4 +27,5 @@ model User {
   memes         Meme[]
   isPremium     Boolean  @default(false)
   stripeId      String   @unique
+  isAdmin       Boolean  @default(false)
 }

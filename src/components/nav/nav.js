@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { StrongLink } from 'styles/GlobalUtils';
 import Link from 'next/link';
 import AuthenticationButton from 'components/auth/authenticationButton';
+import { useUser } from '@auth0/nextjs-auth0';
 
 export default function Nav() {
+  const { user } = useUser();
   return (
     <StyledNav>
       <Link href="/" passHref>
@@ -14,6 +16,11 @@ export default function Nav() {
         <StrongLink>Meme Generator</StrongLink>
       </Link>
       <AuthenticationButton />
+      {user?.isAdmin && (
+        <Link href="/admin" passHref>
+          <StrongLink>Admin</StrongLink>
+        </Link>
+      )}
     </StyledNav>
   );
 }

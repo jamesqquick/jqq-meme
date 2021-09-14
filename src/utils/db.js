@@ -39,3 +39,28 @@ export const updateUserToPremium = async ({ id }) =>
       isPremium: true,
     },
   });
+
+export const approveMeme = async (id) =>
+  prisma.meme.update({
+    where: {
+      id,
+    },
+    data: {
+      approved: true,
+    },
+  });
+
+export const getUnapprovedMemes = async () =>
+  prisma.meme.findMany({
+    where: {
+      approved: false,
+    },
+  });
+
+// TODO: delete image in storage also
+export const deleteMeme = async (id) =>
+  prisma.meme.delete({
+    where: {
+      id,
+    },
+  });

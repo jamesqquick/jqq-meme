@@ -27,9 +27,11 @@ const afterCallback = async (req, res, session) => {
     await createUser({ id: sub, stripeId: newCustomer.id, twitterHandle });
     session.user.isPremium = false;
     session.user.stripeId = newCustomer.id;
+    session.user.isAdmin = existingUser.isAdmin;
   } else {
     session.user.isPremium = existingUser.isPremium;
     session.user.stripeId = existingUser.stripeId;
+    session.user.isAdmin = existingUser.isAdmin;
   }
 
   const supabaseToken = createSupabaseToken(sub);

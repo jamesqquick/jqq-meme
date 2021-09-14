@@ -12,6 +12,7 @@ import { Breakpoints } from 'styles/Breakpoints';
 import { useUser } from '@auth0/nextjs-auth0';
 import MemeForm from 'components/meme/memeForm';
 import LoginButton from 'components/auth/loginButton';
+import MemeGallery from 'components/meme/gallery';
 // import MemeGallery from 'components/meme/gallery';
 
 export default function Home() {
