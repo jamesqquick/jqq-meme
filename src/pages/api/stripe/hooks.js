@@ -17,14 +17,17 @@ const handler = async (req, res) => {
     event = stripe.webhooks.constructEvent(reqBuffer, signature, signingSecret);
   } catch (err) {
     console.log(err);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    return res.status(200).send(`Webhook Error: ${err.message}`);
   }
 
   console.log('Stripe event', event);
   const { metadata = {} } = event?.data?.object;
   const { userId } = metadata;
 
-  if (!userId) return res.status(400).send(`This ain't right`);
+  if (!userId)
+    return res
+      .status(200)
+      .send(`We didn't get a user id so we are IGNORING this one :)`);
 
   switch (event.type) {
     case 'charge.succeeded':
